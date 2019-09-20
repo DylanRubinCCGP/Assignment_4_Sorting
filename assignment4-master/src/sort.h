@@ -37,22 +37,52 @@ namespace csi281 {
     // Performs an in-place ascending sort of *array* of size *length*
     // using the bubble sort algorithm
     template <typename T>
-    void bubbleSort(T array[], const int length) {
+    void bubbleSort(T array[], const int length)
+	{
         // YOUR CODE HERE
     }
     
     // Performs an in-place ascending sort of *array* of size *length*
     // using the selection sort algorithm
     template <typename T>
-    void selectionSort(T array[], const int length) {
-        // YOUR CODE HERE
+    void selectionSort(T array[], const int length)
+	{
+		int i, k, tempMin, garb;
+
+		for (i = 0; i < length - 1; i++)
+		{
+			tempMin = i;
+
+			for (k = i + 1; k < length; k++)
+				if (array[k] < array[tempMin])
+					tempMin = k;
+			
+			garb = array[tempMin];
+			array[tempMin] = array[i];
+			array[i] = garb;
+		}
     }
     
     // Performs an in-place ascending sort of *array* of size *length*
     // using the insertion sort algorithm
     template <typename T>
-    void insertionSort(T array[], const int length) {
-        // YOUR CODE HERE
+    void insertionSort(T array[], const int length)
+	{
+		int i, k, tempMax;
+
+		for (i = 1; i < length; i++)
+		{
+			tempMax = array[i];
+			k = i - 1;
+
+			while (k >= 0 && array[k] > tempMax)
+			{
+				array[k + 1] = array[k];
+				k = k - 1;
+			}
+
+			array[k + 1] = tempMax;
+		}
     }
 }
 
