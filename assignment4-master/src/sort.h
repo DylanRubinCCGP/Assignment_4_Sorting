@@ -33,57 +33,59 @@
 using namespace std;
 
 namespace csi281 {
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the bubble sort algorithm
-    template <typename T>
-    void bubbleSort(T array[], const int length)
-	{
-        // YOUR CODE HERE
-    }
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the selection sort algorithm
-    template <typename T>
-    void selectionSort(T array[], const int length)
-	{
-		int i, k, tempMin, garb;
 
-		for (i = 0; i < length - 1; i++)
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the bubble sort algorithm
+	template <typename T>
+	void bubbleSort(T array[], const int length)
+	{
+		// YOUR CODE HERE
+	}
+
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the selection sort algorithm
+	template <typename T>
+	void selectionSort(T array[], const int length)
+	{
+		int i, k, tempMin;
+		T garb;
+
+		for (i = 0; i < length - 1; i++)  //moving through the entire array 
 		{
-			tempMin = i;
+			tempMin = i;  //taking the first element of an unsorted part of the array
 
-			for (k = i + 1; k < length; k++)
-				if (array[k] < array[tempMin])
+			for (k = i + 1; k < length; k++)  //moving through the unsorted part of the array 
+				if (array[k] < array[tempMin])  //searching for the smallest element
 					tempMin = k;
-			
-			garb = array[tempMin];
+
+			garb = array[tempMin];  //swapping elements
 			array[tempMin] = array[i];
 			array[i] = garb;
 		}
-    }
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the insertion sort algorithm
-    template <typename T>
-    void insertionSort(T array[], const int length)
-	{
-		int i, k, tempMax;
+	}
 
-		for (i = 1; i < length; i++)
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the insertion sort algorithm
+	template <typename T>
+	void insertionSort(T array[], const int length)
+	{
+		int i, k;
+		T tempMax;
+
+		for (i = 1; i < length; i++)  //moving through the entire array
 		{
-			tempMax = array[i];
+			tempMax = array[i];  //taking next element which should be inserted somewhere
 			k = i - 1;
 
-			while (k >= 0 && array[k] > tempMax)
+			while (k >= 0 && array[k] > tempMax)  //moving while index is more or equal to 0 or while did not find a right place to insert
 			{
-				array[k + 1] = array[k];
+				array[k + 1] = array[k]; //move an elements to the right
 				k = k - 1;
 			}
 
-			array[k + 1] = tempMax;
+			array[k + 1] = tempMax;  //inserting the element to the right position
 		}
-    }
+	}
 }
 
 
