@@ -1,0 +1,8 @@
+1) Because it needs to do much more swaps of elements.
+
+2) Because it needs to search through just as many elements as it needs to find the next element,
+bu selectionSort searches through all the elements every time.
+
+3) 
+
+4) 
