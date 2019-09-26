@@ -33,19 +33,31 @@
 using namespace std;
 
 namespace csi281 {
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the bubble sort algorithm
-    template <typename T>
-    void bubbleSort(T array[], const int length)
+
+	//Swapping algorithm
+	void swap(int *pone, int *ptwo)
 	{
-        // YOUR CODE HERE
-    }
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the selection sort algorithm
-    template <typename T>
-    void selectionSort(T array[], const int length)
+		int trash = *pone;
+		*pone = *ptwo;
+		*pone = trash;
+	}
+
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the bubble sort algorithm
+	template <typename T>
+	void bubbleSort(T array[], const int length)
+	{
+		int i, j;
+		for (i = 0; i < length - 1; i++)
+			for (j = 0; j < length - i - 1; j++)
+				if (array[j] > array[j + 1])
+					swap(&arr[j], &arr[j + 1]);
+	}
+
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the selection sort algorithm
+	template <typename T>
+	void selectionSort(T array[], const int length)
 	{
 		int i, k, tempMin, garb;
 
@@ -56,17 +68,17 @@ namespace csi281 {
 			for (k = i + 1; k < length; k++)
 				if (array[k] < array[tempMin])
 					tempMin = k;
-			
+
 			garb = array[tempMin];
 			array[tempMin] = array[i];
 			array[i] = garb;
 		}
-    }
-    
-    // Performs an in-place ascending sort of *array* of size *length*
-    // using the insertion sort algorithm
-    template <typename T>
-    void insertionSort(T array[], const int length)
+	}
+
+	// Performs an in-place ascending sort of *array* of size *length*
+	// using the insertion sort algorithm
+	template <typename T>
+	void insertionSort(T array[], const int length)
 	{
 		int i, k, tempMax;
 
@@ -83,7 +95,7 @@ namespace csi281 {
 
 			array[k + 1] = tempMax;
 		}
-    }
+	}
 }
 
 
