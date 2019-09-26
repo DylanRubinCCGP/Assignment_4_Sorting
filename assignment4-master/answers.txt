@@ -5,4 +5,4 @@ bu selectionSort searches through all the elements every time.
 
 3) 
 
-4) 
+4) The standard library sort function is faster than the hand-coded sort functions due to the fact that the std::sort is optimized for several types of data types. according to GeeksForGeeks.com, the std::sort function has been shown to operate between 250% to 1000% faster than the hand written sorts. Source: (https://www.geeksforgeeks.org/c-qsort-vs-c-sort/)
