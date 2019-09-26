@@ -3,6 +3,10 @@
 2) Because it needs to search through just as many elements as it needs to find the next element,
 bu selectionSort searches through all the elements every time.
 
-3) 
+3) It is neccesary to overload "<" and ">" operators
 
-4) The standard library sort function is faster than the hand-coded sort functions due to the fact that the std::sort is optimized for several types of data types. according to GeeksForGeeks.com, the std::sort function has been shown to operate between 250% to 1000% faster than the hand written sorts. Source: (https://www.geeksforgeeks.org/c-qsort-vs-c-sort/)
+4) The standard library sort function is faster than the hand-coded sort functions due to the fact that the std::sort is optimized for several types of data types.
+According to GeeksForGeeks.com, the std::sort function has been shown to operate between 250% to 1000% faster than the
+hand written sorts. Source: (https://www.geeksforgeeks.org/c-qsort-vs-c-sort/)
+Also, it is because it uses quickSort
+

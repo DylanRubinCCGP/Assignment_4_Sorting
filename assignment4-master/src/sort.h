@@ -1,3 +1,4 @@
+//  MMade by Egoor Fesenko and Dylan Rubin
 //
 //  sort.h
 //  
@@ -40,12 +41,18 @@ namespace csi281 {
 	void bubbleSort(T array[], const int length)
 	{
 		int i, j;
+		T garb;
 		for (i = 0; i < length - 1; i++) 
 		{
 			for (j = 0; j < length - i - 1; j++)
 			{
 				if (array[j] > array[j + 1])
-					swap(&array[j], &array[j + 1]);
+				{
+					//swap(&array[j], &array[j + 1]);
+					garb = array[j];  //swapping elements
+					array[j] = array[j+1];
+					array[j+1] = garb;
+				}
 			}
 		}
 	}
