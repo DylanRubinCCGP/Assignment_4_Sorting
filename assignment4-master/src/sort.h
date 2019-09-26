@@ -34,24 +34,20 @@ using namespace std;
 
 namespace csi281 {
 
-	//Swapping algorithm
-	void swap(int *pone, int *ptwo)
-	{
-		int trash = *pone;
-		*pone = *ptwo;
-		*pone = trash;
-	}
-
 	// Performs an in-place ascending sort of *array* of size *length*
 	// using the bubble sort algorithm
 	template <typename T>
 	void bubbleSort(T array[], const int length)
 	{
 		int i, j;
-		for (i = 0; i < length - 1; i++)
+		for (i = 0; i < length - 1; i++) 
+		{
 			for (j = 0; j < length - i - 1; j++)
+			{
 				if (array[j] > array[j + 1])
 					swap(&array[j], &array[j + 1]);
+			}
+		}
 	}
 
 	// Performs an in-place ascending sort of *array* of size *length*
